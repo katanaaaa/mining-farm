@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 2349334837981729947}
   - component: {fileID: 2349334837981729946}
   - component: {fileID: 2349334837981729957}
+  - component: {fileID: 6056158809047981752}
   - component: {fileID: 2349334837981729945}
   m_Layer: 6
   m_Name: GPU
@@ -271,6 +272,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6056158809047981752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349334837981729956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 650b74d46c2ac6d41b7ddea30afdb459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _period: 5
 --- !u!114 &2349334837981729945
 MonoBehaviour:
   m_ObjectHideFlags: 0
