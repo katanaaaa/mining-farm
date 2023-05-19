@@ -2,21 +2,21 @@ using UnityEngine;
 
 public class Moving : MonoBehaviour
 {
+    private GameObject _ui;
     private GPU _gpu;
 
     [SerializeField] private LayerMask _layerToHit;
     private Vector3 _screenPosition;
     private Vector3 _worldPosition;
 
-    private int _clickCount;
     private bool _mouseDown;
 
     private void Awake()
     {
         _gpu = GetComponent<GPU>();
+        _ui = GameObject.FindGameObjectWithTag("UI");
 
         _mouseDown = true;
-        _clickCount = 0;
     }
 
     private void FixedUpdate()
@@ -38,20 +38,14 @@ public class Moving : MonoBehaviour
 
     private void OnMouseDown()
     {
-        _clickCount++;
-        if (_clickCount < 2)
-        {
-            _mouseDown = true;
-            if (_gpu != null)
-                _gpu.IsStanding = false;
-        }
-        else
-        {
-            _mouseDown = false;
-            _clickCount = 0;
+        _mouseDown = false;
 
-            if (_gpu != null) 
-                _gpu.IsStanding = true;
+        if (_gpu != null)
+        {
+            _gpu.IsStanding = true;
         }
+
+        var shop = (_ui.transform.GetChild(0).gameObject).transform.GetChild(1).gameObject;
+        shop.SetActive(true);
     }
 }

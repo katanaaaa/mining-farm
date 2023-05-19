@@ -10,5 +10,6 @@ public class Environment : MonoBehaviour
         Instantiate(_environmentConfig.DirectionalLight, Vector3.zero, _environmentConfig.LightQuaternion);
         Instantiate(_environmentConfig.MainCamera);
         Instantiate(_environmentConfig.Floor);
+        Instantiate(_environmentConfig.ObjectsStorage);
     }
 }

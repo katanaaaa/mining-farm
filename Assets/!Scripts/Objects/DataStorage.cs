@@ -20,6 +20,6 @@ public class DataStorage : MonoBehaviour
 
     private void DoWork()
     {
-        _maxPlayerBitcoins += 1;
+        _maxPlayerBitcoins += 1f;
     }
 }

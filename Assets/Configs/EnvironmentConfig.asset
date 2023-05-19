@@ -16,3 +16,4 @@ MonoBehaviour:
   LightQuaternion: {x: 0, y: 0, z: 0, w: 0}
   MainCamera: {fileID: 338637596702104921, guid: 19fecc37423c7e94d9b4774978a4a25b, type: 3}
   Floor: {fileID: 6677131144960254715, guid: 8ffffd964af66424d9ddc66045f25fa6, type: 3}
+  ObjectsStorage: {fileID: 7284748398515656410, guid: 85c42e1137f7a554882bf7f64752ae1b, type: 3}

@@ -24,10 +24,13 @@ public class GPU : MonoBehaviour
     {
         if (IsStanding)
         {
-            if (_playerBitcoins < _maxPlayerBitcoins)
+            if (_playerBitcoins <= _maxPlayerBitcoins)
+            {
                 DoWork();
+                Debug.Log(_player.GetBitcoinsCount());
+            }
             else
-                Debug.Log("Память закончилась!!!");
+                Debug.LogWarning("Память закончилась!!!");
         }
     }
 
@@ -38,11 +41,6 @@ public class GPU : MonoBehaviour
             _nextActionTime += _period;
             _playerBitcoins += Mathf.Pow(10f, -5f);
         }
-        Debug.Log(_playerBitcoins);
-    }
-
-    public void SetBool(ref bool condition, bool value)
-    {
-        condition = value;
+        //Debug.Log(_playerBitcoins);
     }
 }

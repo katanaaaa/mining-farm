@@ -3,12 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _maxPlayerBitcoins;
-    private float _bitcoins;
-
-    private void Awake()
-    {
-        _bitcoins = 0f;
-    }
+    private float _bitcoins = 1f;
 
     public ref float GetBitcoinsCount()
     {

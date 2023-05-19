@@ -7,4 +7,5 @@ public class EnvironmentConfig : ScriptableObject
     public Quaternion LightQuaternion;
     public GameObject MainCamera;
     public GameObject Floor;
+    public GameObject ObjectsStorage;
 }

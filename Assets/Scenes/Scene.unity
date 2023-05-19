@@ -179,8 +179,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6959491778383448874, guid: 78ba3086b68e55d4a9353f4785f83295, type: 3}
+      propertyPath: UIConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 23ec3c7effa49a84da95056d3dbb51da, type: 2}
+    - target: {fileID: 6959491778383448874, guid: 78ba3086b68e55d4a9353f4785f83295, type: 3}
       propertyPath: PlayerConfig
       value: 
       objectReference: {fileID: 11400000, guid: 026f1da3c784cde4882f133589a15298, type: 2}
+    - target: {fileID: 6959491778383448874, guid: 78ba3086b68e55d4a9353f4785f83295, type: 3}
+      propertyPath: ObjectsConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: af9c2afe9c8b2f24786e76e04aad4cce, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78ba3086b68e55d4a9353f4785f83295, type: 3}
