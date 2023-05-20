@@ -7,7 +7,7 @@ public class DataStorage : MonoBehaviour
     
     private void Start()
     {
-        _maxPlayerBitcoins = FindFirstObjectByType<Player>().GetMaxPlayerBitcoins();
+        _maxPlayerBitcoins = Player.MaxPlayerBitcoins;
         IsStanding = false;
     }
     private void FixedUpdate()

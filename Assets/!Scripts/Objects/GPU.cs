@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class GPU : MonoBehaviour
 {
-    private Player _player;
-
     [SerializeField] float _period = 5f;
     private float _nextActionTime;
 
@@ -13,9 +11,8 @@ public class GPU : MonoBehaviour
 
     private void Start()
     {
-        _player = FindFirstObjectByType<Player>();
-        _playerBitcoins = _player.GetBitcoinsCount();
-        _maxPlayerBitcoins = _player.GetMaxPlayerBitcoins();
+        _maxPlayerBitcoins = Player.MaxPlayerBitcoins;
+        _playerBitcoins = Player.Bitcoins;
 
         IsStanding = false;
         _nextActionTime = 0.0f;
@@ -27,7 +24,7 @@ public class GPU : MonoBehaviour
             if (_playerBitcoins <= _maxPlayerBitcoins)
             {
                 DoWork();
-                Debug.Log(_player.GetBitcoinsCount());
+                //Debug.Log(_playerBitcoins);
             }
             else
                 Debug.LogWarning("Память закончилась!!!");
