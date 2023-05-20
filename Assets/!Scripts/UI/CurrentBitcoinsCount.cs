@@ -7,6 +7,6 @@ public class CurrentBitcoinsCount : MonoBehaviour
 
     private void FixedUpdate()
     {
-        BitcoinsCount.text = Player.Bitcoins.ToString();
+        BitcoinsCount.text = ((int)Player.Bitcoins).ToString();
     }
 }
