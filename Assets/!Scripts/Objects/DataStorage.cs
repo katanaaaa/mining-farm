@@ -13,6 +13,5 @@ public class DataStorage : MonoBehaviour
     {
         if (IsStanding)
             Player.MaxPlayerBitcoins += 1f;
-        Debug.LogWarning($"MaxPlayerBitcoins = {Player.MaxPlayerBitcoins}");
     }
 }

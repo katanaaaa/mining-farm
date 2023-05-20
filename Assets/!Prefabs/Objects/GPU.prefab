@@ -284,7 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 650b74d46c2ac6d41b7ddea30afdb459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _storageFull: {fileID: 0}
+  _ui: {fileID: 983780140731129132, guid: 4842057242564564db81a00700b07b89, type: 3}
   IsStanding: 0
 --- !u!114 &2349334837981729945
 MonoBehaviour:
@@ -298,6 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d396df869eb994d8911862c714b7d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Shop: {fileID: 0}
   _layerToHit:
     serializedVersion: 2
     m_Bits: 8

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonBuy : MonoBehaviour
 {
@@ -9,13 +10,30 @@ public class ButtonBuy : MonoBehaviour
 
     public void BuyItem(int itemNumber)
     {
-        if (Player.Bitcoins >= _prices[itemNumber])
+        var storageFull = _shop.transform.GetChild(0).gameObject.transform.GetChild(6).gameObject;
+
+        if (Player.Bitcoins <= Player.MaxPlayerBitcoins)
         {
-            Player.Bitcoins -= _prices[itemNumber];
-            _shop.SetActive(false);
-            _objectsStorage.GetComponent<CreateObject>().CreateObj(itemNumber);
+            if (Player.Bitcoins >= _prices[itemNumber])
+            {
+                Player.Bitcoins -= _prices[itemNumber];
+                _shop.SetActive(false);
+                _objectsStorage.GetComponent<CreateObject>().CreateObj(itemNumber);
+            }
+            else
+                _notEnoughBitcoinsWindow.SetActive(true);
         }
         else
-            _notEnoughBitcoinsWindow.SetActive(true);
+        {
+            _shop.transform.GetChild(0).transform.GetChild(2).gameObject.GetComponent<Button>().interactable = false;
+            if (itemNumber == 1)
+            {   
+                Player.Bitcoins -= _prices[itemNumber];
+                _shop.SetActive(false);
+                _objectsStorage.GetComponent<CreateObject>().CreateObj(itemNumber);
+            }
+            else
+                storageFull.SetActive(true);
+        }
     }
 }

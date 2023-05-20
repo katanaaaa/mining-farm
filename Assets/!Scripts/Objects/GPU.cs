@@ -1,18 +1,20 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GPU : MonoBehaviour
 {
-    private GameObject _storageFull;
+    private GameObject _gpuButton;
+
     private float _period = 5f;
     private float _nextActionTime;
 
-    private float _maxPlayerBitcoins;
     public bool IsStanding;
 
     private void Start()
     {
-        _maxPlayerBitcoins = Player.MaxPlayerBitcoins;
-        var shop = GetComponent<Moving>().Shop;
+        var ui = GameObject.FindGameObjectWithTag("UI");
+        var shop = ui.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject;
+        _gpuButton = shop.transform.GetChild(0).gameObject.transform.GetChild(2).gameObject;
 
         IsStanding = false;
         _nextActionTime = 0.0f;
@@ -21,16 +23,11 @@ public class GPU : MonoBehaviour
     {
         if (IsStanding)
         {
-            if (Player.Bitcoins <= _maxPlayerBitcoins)
+            if (Player.Bitcoins <= Player.MaxPlayerBitcoins)
             {
-                DoWork();
-            }
-            else
-            {
-                // нужно контролировать этот случай
-                _storageFull.SetActive(true);
+                _gpuButton.GetComponent<Button>().interactable = true;
 
-                Debug.LogWarning("Память закончилась!!!");
+                DoWork();
             }
         }
     }
